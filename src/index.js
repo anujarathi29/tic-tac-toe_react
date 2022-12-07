@@ -3,19 +3,27 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 class Square extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      value: null,
+    };
+  }
   render(){
     return(
-    <button className="Square">
-      {this.props.value}
-    </button>
+      <button className="square" onClick={() =>
+      this.setState({value: 'X'})}>
+        {this.state.value}
+      </button>
     );
   }
 }
 
 class Board extends React.Component {
   renderSquare(i){
-    return <Square value={i}/>;
+    return <Square />;
   }
+
   render(){
     const status = "Next Player : X";
     return(
