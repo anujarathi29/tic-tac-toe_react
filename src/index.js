@@ -70,6 +70,7 @@ class Game extends React.Component{
       history: history.concat([{
         squares: squares
       }]),
+      stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
     });
   }
@@ -109,7 +110,7 @@ class Game extends React.Component{
       <div className='game'>
         <div className='game-board'>
           <Board
-          squares = {current.status}
+          squares = {current.squares}
           onClick={(i) => this.handleClick(i)}
           />
         </div>
